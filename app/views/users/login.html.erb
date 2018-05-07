@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/users/login.css">
+<div class="outer-card">
+    <div>
+        <%= flash[:notice] %>
+    </div>
+    <p class="heading">Log in</p>
+    <div class="login-card">
+
+        <img src="/images/login.png" alt="logo" class="user"> 
+
+        <% form_for(:user,:url=>{:controller=>"users", :action=>"login_attempt"})  do |f| %>
+          <p><%= f.text_field :username,:required => true,:placeholder => "username",:minlength=>3,:maxlength=>15,:class =>"width"%> </p>
+          <p><%= f.password_field :login_password,:required => true,:placeholder => "password",:minlength=>3,:maxlength=>15,:class =>"width"%></p>
+          <div style="margin-left: 2%;">
+              <%= f.submit :login, :class=>"button no-underline" %>
+              <% permitted_to? :create, :patients do %>
+                <%= link_to "New user? Signup", new_patient_path, :class=>"button-signup no-underline" %>
+              <% end %>
+          </div>
+        <% end %>
+    </div>
+
+</div>

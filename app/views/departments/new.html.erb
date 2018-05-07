@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/departments/new.css">
+<div class="outer-card">
+    <p class="heading">Department Registration</p>
+    <div class="login-card">
+        <img src="/images/department.png" alt="logo" class="user">
+        <% form_for @department do |f|  %>
+          <div class="space"><%= f.error_messages %></div>
+
+          <div class="space">  
+              <%= f.text_field :name,:required => true,:placeholder => "name", :class =>"width"%>
+          </div>
+
+          <div class="space">   <%= f.submit "Create", :class=>"button no-underline"%>
+              <% permitted_to? :index, :admins do %>
+                <%= link_to 'Back', admins_path, :class=>"button-back no-underline" %>
+              <% end %>
+          </div>
+
+        <% end %>
+    </div>
+</div>

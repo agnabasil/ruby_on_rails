@@ -1,0 +1,33 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/departments/index.css">
+<div class="container"> 
+    <div class="content">
+        <div class="heading">
+            <p>Departments:</p>
+        </div>
+        <div class="list-table">
+
+            <% @departments.each_with_index do|department,i| %>   
+              <div class="tile">
+                  <p class="dept-name"><%=  department.name %></>
+                  <p class="dept-doc">Doctors:- <%= department.doctors.count  %></p>
+                  <p class="delete_pos no-underline"><% permitted_to? :destroy, :departments do %>
+                    <%= link_to 'Delete',department,:confirm => 'Are you Sure?', :method=>:delete ,:class=>"button-delete no-underline"%>
+                  <% end %></p>
+              </div>
+            <% end %>
+
+        </div>
+    </div>
+    <div class="links">
+        <% permitted_to? :new, :departments do %>
+          <%= link_to 'add department', new_department_path, :class=>"button no-underline" %>
+        <% end %>
+        <% permitted_to? :index, :admins do %>
+          <%= link_to 'Back', admins_path, :class=>"button-back no-underline"%>
+        <% end %>
+    </div>
+
+    <div class="partial-list" id="dept-doc-list">
+
+    </div>
+</div>

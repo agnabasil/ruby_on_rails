@@ -1,0 +1,155 @@
+.container{
+
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-right: 10%;
+    padding: 2%;    
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+.notice{
+    float: left;
+    padding: 1%;
+    text-align: left;
+    font-size: 18px;
+    line-height: 20px;
+    width: 40%;
+    color: #4ac137;
+}
+.current-date{
+    float: right;
+    font-family: Palatino, URW Palladio L, serif;
+    font-size: 15px;
+    font-style: oblique;
+}
+.content{
+    display: inline-block;
+    float: left;
+    margin: 1%;
+    width: auto;
+    height: auto;
+
+}
+.tile{
+
+    margin: 1%;
+    padding: 1%;
+    width: 400px;
+    height: 120px;
+    float: left;
+    padding: 1%;    
+    overflow: hidden;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+.tile:hover{
+    
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.image-department{
+    background-image:  url("/images/department.png");
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.image-doctor{
+    background-image:  url("/images/doctor.png");
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.image-patient{
+    background-image:  url("/images/patient.png");
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.image-room-and-bed{
+    background-image:  url("/images/roomandbed.png");
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.image-registration{
+    background-image:  url("/images/registration.png");
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.heading{
+    overflow: hidden;
+    display: inline-block;
+    text-align: right;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 30px
+}
+.discription{
+    overflow: hidden;
+    /*float: left;*/
+    font-size: 12px;
+    margin-left: 115px;
+    margin-top: -25px;
+}
+.doc-discription{
+    overflow: hidden;
+    font-size: 12px;
+    margin-left: 120px;
+    margin-top: -25px;
+}
+.button-position{
+    text-align: right;
+    margin-top: -30px;
+    padding-right: 15px;
+}
+.button{
+    font-size: 10px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase; 
+}
+.no-underline{
+
+    text-decoration: none;
+
+}
+.count{
+    font-size: 14px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: #147dfb;
+    font-weight: bold;
+}

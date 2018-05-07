@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/patients/new_appointment.css">
+<div class="container">
+    <div class="outer-card">
+        <p class="heading">New Appointment</p>
+        <div class="login-card">
+            <img src="/images/registration.png" alt="logo" class="user">
+            <% form_for :appointment, :url=>create_new_appointment_patient_path  do |f| %>
+              <div class="space"><%= f.error_messages %></div>
+
+              <div class="space">
+                  <%= f.label :select_department %>
+                  <%= f.select :id, options_for_select(@departments.map{|d| [d.name,d.id]}),:required => true, :class =>"width"%>
+              </div>
+
+              <div class="space">  
+                  <%= f.label :appointment_date_and_time %><br/>
+                  <%= f.datetime_select :appointment_date, :start_year => 2018,:id=> "start_date", :required => true, :class =>"width", :default => { :hour => Time.now.strftime("%H"), :minute => Time.now.strftime("%M") }%>
+              </div>
+
+              <div class="space">  
+                  <%= f.label :appointment_duration %><br/>
+                  <%= f.select :duration,[5,10,15,20,25,30],:required => true, :class =>"width" %><br/>
+              </div>
+
+              <a id="list" href="#" class="button no-underline">show Available Doctors</a>
+              <div id="showdoctors"><br>
+                  <% permitted_to? :index, :patients do %>
+                    <%= link_to 'Back', patients_path,:class => "button no-underline" %>
+                  <% end %>
+              </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+    $('#list').on('click',function(e){
+    e.preventDefault();
+    patient_id=<%=@patient.id%>
+    appointment_date11 = $('#appointment_appointment_date_1i').val()+"-" + $('#appointment_appointment_date_2i').val()+"-" + $('#appointment_appointment_date_3i').val()+" " + $('#appointment_appointment_date_4i').val()+":" +$('#appointment_appointment_date_5i').val()
+    duration=$('#appointment_duration').val()
+    $.ajax({
+    method: 'get',
+    url: "/patients/list_available_doctors",
+    data: {patient_id: patient_id,department_id: $('#appointment_id').val(),appointment_date: appointment_date11,duration:$('#appointment_duration').val() },
+    complete: function(resp){
+    $('#showdoctors').html(resp.responseText);
+    }
+    })
+    });
+    })
+</script>

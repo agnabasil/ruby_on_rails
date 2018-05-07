@@ -1,0 +1,117 @@
+.container{
+
+    /*overflow: hidden;*/
+    width: 80%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-right: 10%;
+    padding: 2%;    
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+.content{
+    display: inline-block;
+    float: left;
+    margin: 1%;
+    width: 100%;
+    height: auto;
+
+}
+.tile{
+    margin: 1%;
+    padding: 1%;
+    width: 400px;
+    height: 160px;
+    float: left;
+    margin-top: -10px;
+    /*overflow: hidden;*/
+    text-align: center;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.tile:hover{
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.links{
+    width: 1000px;
+    
+}
+.button{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase; 
+}
+.button-back{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}
+.button-delete{
+    margin-top: -9px;
+    font-size: 12px;
+    padding: 3px;
+    color: #ff0000; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}
+.heading{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Palatino, URW Palladio L, serif;
+
+}
+.no-underline{
+    text-decoration: none;
+}
+
+.partial-list{
+    float: right;
+
+}
+.pt-name{
+    margin-top: -25px;
+    margin-left: 5px;
+    font-family: Palatino, URW Palladio L, serif;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic ;
+
+}
+.pt-age{
+    margin-top:-20px;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-size: 15px ;
+    font-style: oblique;
+}
+.pt-img{
+    width: 1px;
+    height: 1px;
+}
+.img-size{
+    width: 60px;
+}
+.pt-date{
+    margin-top:-20px;
+    margin-left: 10px;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-size: 13px ;
+    font-style: oblique;
+}
+.pt-pos{
+    
+}

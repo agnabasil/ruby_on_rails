@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/admins/view_patient.css">
+<div class="container"> 
+    <div class="content">
+        <div class="heading">
+            <p>Patients:</p>
+        </div>
+        <div class="list-table">
+
+            <% @patients.each_with_index do|patient,i| %>
+              <div class="tile">
+                  <p class="pt-img"><%= image_tag patient.avatar.url(:thumb),:class=>"img-size" %></p>
+                  <p class="pt-name"><%=  patient.name %></p>
+                  <p class="pt-age">age:<%= patient.age %></p>
+                  <p>
+                      <% permitted_to? :destroy, :patients do %>
+                        <%= link_to 'Delete',patient,:confirm => 'Are you Sure?', :method=>:delete ,:class=>"button-delete no-underline"%>
+                      <% end %>
+                  </p>
+              </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="links">
+        <% permitted_to? :index, :admins do %>
+          <%= link_to 'Back', admins_path, :class=>"button-back no-underline"%>
+        <% end %>
+    </div>
+    <div class="partial-list" id="doc-info">
+
+    </div>
+</div>

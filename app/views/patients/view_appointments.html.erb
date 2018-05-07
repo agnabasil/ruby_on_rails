@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/patients/view_appointments.css">
+<div class="container"> 
+    <div class="content">
+        <div class="heading">
+            <p>My Appointments:</p>
+        </div>
+
+
+        <% @appointments.each_with_index do|appointment,i| %>
+          <div class="tile">
+
+              <p class="ap-name">Doctor name: <%= appointment.doctor.name %></p>
+              <p class="ap-time">Date & Time: <%= appointment.appointment_date.strftime("%a %d-%b-%y") %>
+                  <%= appointment.appointment_date.strftime("%I:%M:%S %P") %></p>
+              <p class="ap-dur">duration: <%= appointment.duration  %> minutes</p>
+              <p class="ap-option">
+                  <% permitted_to? :delete_appointments, :patients do %>
+                    <%= link_to 'Delete',delete_appointments_patient_path(appointment), :confirm => 'Are you Sure?', :method=>:delete,:class=>"button no-underline" %>
+                  <% end %>
+              </p>
+          </div>
+        <% end %>
+
+    </div>
+    <div class="links">
+        <% permitted_to? :index, :patients do %>
+          <%= link_to 'Back', patients_path, :class=>"button-back no-underline"%>
+        <% end %>
+    </div>
+</div>

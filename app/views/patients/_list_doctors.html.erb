@@ -1,0 +1,8 @@
+Select Doctor
+<%= select :appointment,:doctor_id,
+      options_from_collection_for_select(@doctors,"id","name")%>
+<br><button id="submit "name="button" type="submit">Book Appointment</button>
+ <%= link_to 'Back', patients_path ,:class => "button-back no-underline"%>
+
+
+

@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/admins/new_room.css">
+<div class="container">
+    <div class="outer-card">
+        <p class="heading">Room Creation</p>
+        <div class="login-card">
+            <img src="/images/roomandbed.png" alt="logo" class="user">
+            <% form_for @room, :url=>create_new_room_admins_path  do |f|%>
+              <div class="space"><%= f.error_messages %></div>
+
+              <div class="space">  
+                  <%= f.text_field :room_no,:required => true,:placeholder => "Room number", :class =>"width"%>
+              </div>
+
+              <div class="space">   <%= f.submit "Create", :class=>"button no-underline"%>
+                  <% permitted_to? :view_bed, :admins do %>
+                    <%= link_to 'Back', view_bed_admins_path, :class=>"button-back no-underline" %>
+                  <% end %>
+              </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
