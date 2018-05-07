@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/comments/show.css">
+<div class="show-content">
+    <div class="notice">
+        <div><%= flash[:notice] %></div>
+    </div>
+    <h3>Comment of <%=h @comment.commenter %> on <%= @blog.name %></h3>
+    <div class="tile">
+        <p class="blog-up-time">
+            <%= @comment.updated_at.strftime("%a %d-%b-%y %I:%M:%S %P") %>
+        </p>
+        <div class="by-line">
+            <p>
+                <b>-<%=h @comment.commenter.capitalize %></b>
+            </p>
+        </div>
+        <p>
+            <b>>></b>
+            <%=h @comment.body %>
+        </p>
+    </div>
+    <%if @comment.commenter == User.find(session[:id]).username%>
+      <%= link_to 'Edit', edit_blog_comment_path(@blog, @comment),:class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large posBack"  %>
+    <% end %>
+    <%= link_to 'Back', blog_comments_path(@blog),:class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large posBack whitespace"  %>
+</div>

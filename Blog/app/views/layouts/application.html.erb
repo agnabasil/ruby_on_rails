@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+        <meta name="the blogs" content="active web area to share your thoughts">
+        <%= javascript_include_tag :defaults %>
+    </head>
+    <body>
+        <% if @logged_in == true %>
+          <div class="main_header">
+              <p>
+                  <span style="float: left; font-family: FreeMono, monospace;">a place to share your thoughts</span> 
+                  <img src="/images/user.png" alt="user login" class="user"> <%= @login_user%> | <%= link_to "logout", log_out_users_path, :class=>"log-out" %>
+              </p>
+          </div>
+        <% end %>
+        <%= yield %>
+    </body>
+</html>

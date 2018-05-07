@@ -1,0 +1,19 @@
+<% if @comments.present? %>
+  <% @comments.each do |c| %>
+    <div class="one-comm">
+        <p>
+            <b>-<%= c.commenter.capitalize %></b>
+        </p>
+        <p class="blog-up-time">
+            <%= c.updated_at.strftime("%d-%b-%y %k:%M:%S") %>
+        </p>
+        <p>
+            <b>>></b>
+            <%= c.body %>
+        </p>
+    </div>
+
+  <% end %>
+<% else %>
+  <p class="no-comm">no comments yet!</p>
+<% end %>

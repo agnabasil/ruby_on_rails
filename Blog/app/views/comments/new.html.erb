@@ -1,0 +1,9 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/comments/new.css">
+<div class="container">
+    <h1>New comment</h1>
+    <div class="forms" id="comment_form">
+        <%= render :partial => "comment_form" %>
+    </div>
+
+    <%= link_to 'Back', blog_comments_path(@blog),:class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large posBack" %>
+</div>

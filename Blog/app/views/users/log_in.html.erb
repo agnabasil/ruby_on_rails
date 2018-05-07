@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/users/log_in.css">
+<div class="outer-card">
+    <div>
+        <%= flash[:notice] %>
+    </div>
+    <h1>Log in</h1>
+    <div class="login-card">
+
+        <img src="/images/user.png" alt="user login" class="user"> 
+
+        <% form_for(:user,:url=>{:controller=>"users", :action=>"log_in"})  do |f| %>
+          <p> Username:<br/> <%= f.text_field :username_or_email,:required => true%> </p>
+          <p> Password:<br/> <%= f.password_field :login_password,:required => true%></p>
+          <div style="margin-left: 2%;">
+              <%= f.submit :login %>
+          </div>
+        <% end %>
+    </div>
+    <%= link_to "Signup", new_user_path, :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large pos" %>
+</div>

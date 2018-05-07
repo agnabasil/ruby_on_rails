@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/comments/index.css">
+<div class="index-class">
+    <h1>Comments for <%= @blog.name %></h1>
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Comment</th>
+                <th>Action</th>
+            </tr>
+
+            <% for comment in @comments %>
+              <tr>
+                  <td class="all-td"><%=h comment.commenter.capitalize %></td>
+                  <td class="con"><%=h comment.body.downcase %></td>
+                  <td class="all-td">
+                      <%if comment.commenter == User.find(session[:id]).username%>
+                        <%= link_to 'Edit', edit_blog_comment_path(@blog, comment),:class=>"no-under" %> | <%= link_to 'Show', blog_comment_path(@blog, comment),:class=>"no-under" %> | <%= link_to 'Destroy', blog_comment_path(@blog, comment),
+                          :confirm => 'Are you sure?', :method => :delete,:class=>"no-under" %>
+                      <% else %>
+                        <%= link_to 'Show', blog_comment_path(@blog, comment),:class=>"no-under" %>
+                      <% end %>
+
+                  </td>
+              </tr>
+            <% end %>
+        </table>
+    </div>
+
+    <br />
+
+    <%#= link_to 'New comment', new_blog_comment_path(@blog), :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large pos"  %>
+    <%= link_to 'Back to Post', @blog , :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large pos whitespace" %>
+</div>

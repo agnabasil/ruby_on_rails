@@ -1,0 +1,42 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/blogs/index.css">
+<div class="index-class">
+    <h1> The blog's </h1>
+    
+    <div class="notice">
+        <div><%= flash[:notice] %></div>
+    </div>
+    <div class="table-content">
+        <table>
+            <tr>
+                <th>Sl_No.</th>
+                <th>Name</th>
+                <th>Content</th>
+                <th>Author</th>
+                <th>Comments</th>
+                <th>Action</th>
+            </tr>
+            <% @blogs.each_with_index do |blog,i| %>
+              <tr>
+                  <td class="sl-no"><%= i+1 %></td>
+                  <td class="all-td tfont"><%= blog.name.upcase %></td>
+                  <td class="con"><%= blog.content.downcase %></td>
+                  <td class="all-td"><%= blog.author.capitalize %></td>
+                  <td class="sl-no"><%= blog.comments.count %></td>
+                  <td class="action">
+                      <%if blog.author == User.find(session[:id]).username%>
+                        <%= link_to 'Edit', edit_blog_path(blog), :class=>"no-under" %> | <%= link_to "Show" , blog_path(blog), :class=>"no-under"%> | <%= link_to 'Delete', blog, :confirm => 'Are you sure?',  :method => :delete, :class=>"no-under" %> 
+                      <%else%>    
+                        <%= link_to "Show" , blog_path(blog), :class=>"no-under"%>  <span class="circle"><%= blog.comments.count %></span>
+                      <% end %>
+
+                  </td>
+              </tr>
+            <% end %>
+        </table>
+    </div>
+
+    <%= link_to "Create New Blog", new_blog_path, :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large pos" %>
+    <%#= link_to "logout", log_out_users_path, :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large pos" %>
+
+
+</div>

@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/blogs/show.css">
+<div class="show-content">
+    <div class="notice">
+        <div><%= flash[:notice] %></div>
+    </div>
+    <h2>Post details</h2>
+    <div class="tile">
+        <p class="blog-up-time">
+            <%= @blog.updated_at.strftime("%a %d-%b-%y %I:%M:%S %P") %>
+        </p>
+        <p>
+            <b>Name:</b>
+            <%= @blog.name %>
+        </p>
+
+        <p>
+            <b>Content:</b>
+            <%= @blog.content %>
+        </p>
+        <div class="by-line">
+            <p>
+                <b>-</b>
+                <%= @blog.author.capitalize%>
+            </p>
+        </div>
+        <div>
+            <%= image_tag @blog.photo.url(:small) %>
+        </div>
+    </div>
+    <h3>Comments</h3>
+    <div class="comm-tile" id="comments-list">
+        <%= render :partial=>"comments/comment_list" %>
+    </div>
+    <div id="comment_errors"></div>
+    <div id="comment_form">
+        <%= render :partial => "comments/comment_form" %>
+    </div>
+    <p>
+        <%= link_to 'Back', blogs_path, :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large posBack" %>
+
+        <%if @blog.author == User.find(session[:id]).username%>
+          <%= link_to 'Edit Post', edit_blog_path(@blog), :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large posBack whitespace" %>
+        <% end %>
+
+        <%= link_to 'Manage Comments', blog_comments_path(@blog), :class=>"w3-btn w3-white w3-border w3-border-grey w3-round-large posBack whitespace" %>
+    </p>
+</div>
