@@ -1,0 +1,60 @@
+.outer-card{
+    width: 300px;
+    padding: 2%;
+    margin-top: 5%;
+    margin-left: 38%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: #fff;
+    align-content: center;
+}
+
+.login-card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    /*border-radius: 15px / 50px;*/
+    background: linear-gradient(to bottom right, #eff4f7 , #e0f0f9);
+    padding: 2%;
+}
+.width{
+    /*float: right;*/
+    margin-right: 10px;
+    /*text-align: center;*/
+    outline: none;
+    border: none;
+    border-bottom: 0.5px dotted #666;
+    width: 200px;
+    background: transparent;
+}
+.no-underline{
+    text-decoration: none;
+}
+.user{
+    margin-top: 5%;
+    margin-left: 35%;
+    height: 65px;
+    width: 65px;
+}
+.button{
+    font-size: 13px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}
+.button-signup{
+    float: right;
+    font-size: 10px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent;  
+    border-radius: 5px; 
+    text-transform: capitalize;
+}
+.heading{
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-size: 20px;
+}

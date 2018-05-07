@@ -1,0 +1,68 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/admins/index.css">
+<div class="container">
+    <div class="notice">
+        <div><%= flash[:notice] %></div>
+    </div>
+    <div class="current-date">
+        <%= Time.now.strftime("%a %d-%b-%y") %>
+    </div>
+    <div class="content">
+        <div class="tile">
+            <div class="image-department"></div>
+            <div class="heading">Departments</div>
+            <div class="discription"><span class="count"><%= @department.count %></span> departments</div>
+            <p class="button-position">
+                <% permitted_to? :index, :departments do %>
+                  <%= link_to 'View',departments_path , :class=>"button no-underline" %>
+                <% end %>
+                <% permitted_to? :create, :departments do %>
+                  <%= link_to 'Add',new_department_path , :class=>"button no-underline" %>
+                <% end %>
+            </p>
+        </div>
+        <div class="tile">
+            <div class="image-doctor"></div>
+            <div class="heading">Doctors</div>
+            <div class="discription"><span class="count"><%= @doctor.count %></span> doctors</div>
+            <p class="button-position">
+                <% permitted_to? :view_doctor, :admins do %>
+                  <%= link_to 'View',view_doctor_admins_path , :class=>"button no-underline" %>
+                <% end %>
+                <% permitted_to? :create, :doctors do %>
+                  <%= link_to 'Add',new_doctor_path , :class=>"button no-underline" %>
+                <% end %>
+            </p>
+        </div>
+        <div class="tile">
+            <div class="image-patient"></div>
+            <div class="heading">Patients</div>
+            <div class="discription"><span class="count"><%= @patient.count %></span> patients</div>
+            <p class="button-position">
+                <% permitted_to? :view_patient, :admins do %>
+                  <%= link_to 'View',view_patient_admins_path , :class=>"button no-underline" %>
+                <% end %>
+            </p>
+        </div>
+        <div class="tile">
+            <div class="image-room-and-bed"></div>
+            <div class="heading">Rooms and Beds</div>
+            <div class="discription"><span class="count"><%= @room.count %></span> Rooms and <span class="count"><%= @bed.count %></span> beds</div>
+            <p class="button-position">
+                <% permitted_to? :view_bed, :admins do %>
+                  <%= link_to 'View',view_bed_admins_path , :class=>"button no-underline" %>
+                <% end %>
+            </p>
+        </div>
+        <div class="tile">
+            <div class="image-registration"></div>
+            <div class="heading">Bed Registration</div>
+            <div class="discription"><span class="count"><%= @registration.count %></span> Registrations</div>
+            <p class="button-position">
+                <% permitted_to? :all_registration, :admins do %>
+                  <%= link_to 'View', all_registration_admins_path , :class=>"button no-underline" %>
+                <% end %>
+            </p>
+        </div>
+    </div>
+
+</div>

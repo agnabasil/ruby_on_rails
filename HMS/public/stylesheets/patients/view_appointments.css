@@ -1,0 +1,112 @@
+.container{
+
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-right: 10%;
+    padding: 2%;    
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+.content{
+    display: inline-block;
+    float: left;
+    margin: 1%;
+    width: 100%;
+    height: auto;
+
+}
+.tile-out{
+    margin: 2%;
+    padding: 1%;
+    width: 100%;
+    height: 200px;
+    float: left;
+    margin-top: -10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.tile-out:hover{
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.tile{
+    margin: 1%;
+    padding: 1%;
+    width: 400px;
+    height: 150px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.tile:hover{
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.links{
+    width: 1000px;
+    
+}
+.button{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase; 
+}
+.button-back{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}
+.button-delete{
+    margin-top: -5px;
+    font-size: 12px;
+    padding: 3px;
+    color: #ff0000; 
+    background-color: transparent; 
+    border: 1px solid #ff0000; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}
+.heading{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Palatino, URW Palladio L, serif;
+
+}
+.no-underline{
+    text-decoration: none;
+}
+.ap-no{
+    margin-top: -10px;
+}
+.ap-name{
+    margin: 0px;
+    font-size: 20px;
+    font-family: Times, Times New Roman, serif;
+}
+.ap-time{
+    margin: 0px;
+    font-size: 17px;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+}
+.ap-dur{
+    font-family: Palatino, URW Palladio L, serif;
+    font-size: 15px;
+}

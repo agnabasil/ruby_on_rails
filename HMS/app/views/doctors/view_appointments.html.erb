@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/doctors/view_appointments.css">
+<div class="container"> 
+    <div class="content">
+        <div class="heading">
+            <p>Upcoming Appointments:</p>
+        </div>
+
+
+        <% @appointments.each_with_index do|appointment,i| %>
+          <div class="tile">
+              <p class="ap-no"><%=i+1 %></p>
+              <p class="ap-name">patient name: <%= appointment.patient.name %></p>
+              <p class="ap-time">date & time: <%= appointment.appointment_date.strftime("%a %d-%b-%y") %>
+                  <%= appointment.appointment_date.strftime("%I:%M:%S %P") %></p>
+              <p class="ap-dur">duration: <%= appointment.duration  %> minutes</p>
+          </div>
+        <% end %>
+
+    </div>
+    <div class="links">
+        <% permitted_to? :index, :doctors do %>
+          <%= link_to 'Back', doctors_path, :class=>"button-back no-underline"%>
+        <% end %>
+    </div>
+</div>

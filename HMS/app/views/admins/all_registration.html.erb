@@ -1,0 +1,36 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/admins/all_registration.css">
+
+
+<div class="container"> 
+    <div class="content">
+        <div class="heading">
+            <p>Registrations:</p>
+        </div>
+        <div class="list-table">
+
+            <% @registration.each_with_index do|reg,i| %>
+              <div class="tile">
+                  <p class="pt-img"><%= image_tag reg.patient.avatar.url(:thumb),:class=>"img-size" %></p>
+                  <p class="pt-name"><%=  reg.patient.name.camelcase%></p>
+                  <p class="pt-age"><%= reg.bed.bed_no %></p>
+                  <p class="pt-date"><%=  reg.start_time.strftime("%a %d-%b-%y %I:%M:%S %P") %></p>
+                  <p class="pt-date">-to-</p>
+                  <p class="pt-date"><%= reg.end_time.strftime("%a %d-%b-%y %I:%M:%S %P") %></p>
+                  <p class="pt-pos"><% permitted_to? :delete_registration, :admins do %>
+                        <%= link_to 'Delete',delete_registration_admin_path(reg),:confirm => 'Are you Sure?', :method=>:delete ,:class=>"button-delete no-underline"%>
+                      <% end %>
+                  </p>
+              </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="links">
+        <% permitted_to? :new_registration, :admins do %>
+          <%= link_to 'add', new_registration_admins_path, :class=>"button-back no-underline"%>
+        <% end %>
+        <% permitted_to? :index, :admins do %>
+          <%= link_to 'Back', admins_path, :class=>"button-back no-underline"%>
+        <% end %>
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+(in /home/foradian/hospital_management_system)
+                           root        /                                              {:controller=>"users", :action=>"home"}
+                    login_users GET    /users/login(.:format)                         {:controller=>"users", :action=>"login"}
+                     home_users GET    /users/home(.:format)                          {:controller=>"users", :action=>"home"}
+                   logout_users GET    /users/logout(.:format)                        {:controller=>"users", :action=>"logout"}
+                          users GET    /users(.:format)                               {:controller=>"users", :action=>"index"}
+                                POST   /users(.:format)                               {:controller=>"users", :action=>"create"}
+                       new_user GET    /users/new(.:format)                           {:controller=>"users", :action=>"new"}
+                      edit_user GET    /users/:id/edit(.:format)                      {:controller=>"users", :action=>"edit"}
+                           user GET    /users/:id(.:format)                           {:controller=>"users", :action=>"show"}
+                                PUT    /users/:id(.:format)                           {:controller=>"users", :action=>"update"}
+                                DELETE /users/:id(.:format)                           {:controller=>"users", :action=>"destroy"}
+                        doctors GET    /doctors(.:format)                             {:controller=>"doctors", :action=>"index"}
+                                POST   /doctors(.:format)                             {:controller=>"doctors", :action=>"create"}
+                     new_doctor GET    /doctors/new(.:format)                         {:controller=>"doctors", :action=>"new"}
+                    edit_doctor GET    /doctors/:id/edit(.:format)                    {:controller=>"doctors", :action=>"edit"}
+       view_appointments_doctor GET    /doctors/:id/view_appointments(.:format)       {:controller=>"doctors", :action=>"view_appointments"}
+                         doctor GET    /doctors/:id(.:format)                         {:controller=>"doctors", :action=>"show"}
+                                PUT    /doctors/:id(.:format)                         {:controller=>"doctors", :action=>"update"}
+                                DELETE /doctors/:id(.:format)                         {:controller=>"doctors", :action=>"destroy"}
+        all_registration_admins GET    /admins/all_registration(.:format)             {:controller=>"admins", :action=>"all_registration"}
+        new_registration_admins GET    /admins/new_registration(.:format)             {:controller=>"admins", :action=>"new_registration"}
+                 new_bed_admins GET    /admins/new_bed(.:format)                      {:controller=>"admins", :action=>"new_bed"}
+             view_doctor_admins GET    /admins/view_doctor(.:format)                  {:controller=>"admins", :action=>"view_doctor"}
+           ajax_bed_view_admins GET    /admins/ajax_bed_view(.:format)                {:controller=>"admins", :action=>"ajax_bed_view"}
+            view_patient_admins GET    /admins/view_patient(.:format)                 {:controller=>"admins", :action=>"view_patient"}
+                view_bed_admins GET    /admins/view_bed(.:format)                     {:controller=>"admins", :action=>"view_bed"}
+                new_room_admins GET    /admins/new_room(.:format)                     {:controller=>"admins", :action=>"new_room"}
+         create_new_room_admins POST   /admins/create_new_room(.:format)              {:controller=>"admins", :action=>"create_new_room"}
+ create_new_registration_admins POST   /admins/create_new_registration(.:format)      {:controller=>"admins", :action=>"create_new_registration"}
+          create_new_bed_admins POST   /admins/create_new_bed(.:format)               {:controller=>"admins", :action=>"create_new_bed"}
+                         admins GET    /admins(.:format)                              {:controller=>"admins", :action=>"index"}
+                                POST   /admins(.:format)                              {:controller=>"admins", :action=>"create"}
+                      new_admin GET    /admins/new(.:format)                          {:controller=>"admins", :action=>"new"}
+               delete_bed_admin DELETE /admins/:id/delete_bed(.:format)               {:controller=>"admins", :action=>"delete_bed"}
+              delete_room_admin DELETE /admins/:id/delete_room(.:format)              {:controller=>"admins", :action=>"delete_room"}
+      delete_registration_admin DELETE /admins/:id/delete_registration(.:format)      {:controller=>"admins", :action=>"delete_registration"}
+                     edit_admin GET    /admins/:id/edit(.:format)                     {:controller=>"admins", :action=>"edit"}
+                          admin GET    /admins/:id(.:format)                          {:controller=>"admins", :action=>"show"}
+                                PUT    /admins/:id(.:format)                          {:controller=>"admins", :action=>"update"}
+                                DELETE /admins/:id(.:format)                          {:controller=>"admins", :action=>"destroy"}
+list_available_doctors_patients GET    /patients/list_available_doctors(.:format)     {:controller=>"patients", :action=>"list_available_doctors"}
+          view_patient_patients GET    /patients/view_patient(.:format)               {:controller=>"patients", :action=>"view_patient"}
+                       patients GET    /patients(.:format)                            {:controller=>"patients", :action=>"index"}
+                                POST   /patients(.:format)                            {:controller=>"patients", :action=>"create"}
+                    new_patient GET    /patients/new(.:format)                        {:controller=>"patients", :action=>"new"}
+    delete_appointments_patient DELETE /patients/:id/delete_appointments(.:format)    {:controller=>"patients", :action=>"delete_appointments"}
+                   edit_patient GET    /patients/:id/edit(.:format)                   {:controller=>"patients", :action=>"edit"}
+      view_appointments_patient GET    /patients/:id/view_appointments(.:format)      {:controller=>"patients", :action=>"view_appointments"}
+        new_appointment_patient GET    /patients/:id/new_appointment(.:format)        {:controller=>"patients", :action=>"new_appointment"}
+ create_new_appointment_patient POST   /patients/:id/create_new_appointment(.:format) {:controller=>"patients", :action=>"create_new_appointment"}
+                        patient GET    /patients/:id(.:format)                        {:controller=>"patients", :action=>"show"}
+                                PUT    /patients/:id(.:format)                        {:controller=>"patients", :action=>"update"}
+                                DELETE /patients/:id(.:format)                        {:controller=>"patients", :action=>"destroy"}
+                    departments GET    /departments(.:format)                         {:controller=>"departments", :action=>"index"}
+                                POST   /departments(.:format)                         {:controller=>"departments", :action=>"create"}
+                 new_department GET    /departments/new(.:format)                     {:controller=>"departments", :action=>"new"}
+                edit_department GET    /departments/:id/edit(.:format)                {:controller=>"departments", :action=>"edit"}
+                     department GET    /departments/:id(.:format)                     {:controller=>"departments", :action=>"show"}
+                                PUT    /departments/:id(.:format)                     {:controller=>"departments", :action=>"update"}
+                                DELETE /departments/:id(.:format)                     {:controller=>"departments", :action=>"destroy"}
+                                GET    /users(.:format)                               {:controller=>"users", :action=>"index"}
+                                POST   /users(.:format)                               {:controller=>"users", :action=>"create"}
+                                GET    /users/new(.:format)                           {:controller=>"users", :action=>"new"}
+                                GET    /users/:id/edit(.:format)                      {:controller=>"users", :action=>"edit"}
+                   avatars_user GET    /users/:id/avatars(.:format)                   {:controller=>"users", :action=>"avatars"}
+                                GET    /users/:id(.:format)                           {:controller=>"users", :action=>"show"}
+                                PUT    /users/:id(.:format)                           {:controller=>"users", :action=>"update"}
+                                DELETE /users/:id(.:format)                           {:controller=>"users", :action=>"destroy"}
+                                       /:controller/:action/:id                       
+                                       /:controller/:action/:id(.:format)             

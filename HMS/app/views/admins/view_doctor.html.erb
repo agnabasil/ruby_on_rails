@@ -1,0 +1,33 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/admins/view_doctor.css">
+<div class="container"> 
+    <div class="content">
+        <div class="heading">
+            <p>Doctors and Departments:</p>
+        </div>
+        <div class="list-table">
+
+            <% @doctors.each_with_index do|doctor,i| %>
+              <div class="tile">
+                  <p class="doc-name"><%=  doctor.name %></p>
+                  <p class="dept-name"><%= doctor.department.name %></p>
+                  <p>
+                      <% permitted_to? :destroy, :doctors do %>
+                        <%= link_to 'Delete',doctor,:confirm => 'Are you Sure?', :method=>:delete ,:class=>"button-delete no-underline"%>
+                      <% end %>
+                  </p>
+              </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="links">
+        <% permitted_to? :new, :doctors do %>
+          <%= link_to 'add new doctor', new_doctor_path, :class=>"button no-underline" %>
+        <% end %>
+        <% permitted_to? :index, :admins do %>
+          <%= link_to 'Back', admins_path, :class=>"button-back no-underline"%>
+        <% end %>
+    </div>
+    <div class="partial-list" id="doc-info">
+
+    </div>
+</div>

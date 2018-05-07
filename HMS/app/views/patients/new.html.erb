@@ -1,0 +1,46 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/patients/new.css">
+<div class="outer-card">
+    <p class="heading">Sign Up</p>
+    <div class="login-card">
+        <img src="/images/login.png" alt="logo" class="user">
+        <% form_for @patient,:html => { :multipart => true } do |f|  %>
+          <div class="space"><%= f.error_messages %></div>
+
+          <div class="space">  
+              <%= f.text_field :name,:required => true,:placeholder => "name", :class =>"width"%>
+          </div>
+          <div class="space">
+              <%= f.text_field :age ,:required => true,:placeholder => "Age", :class =>"width" %>
+          </div>
+
+          <div class="space">
+              <%= f.file_field :avatar ,:required => true, :class =>"no-underline-feild" %>
+          </div>
+
+          <% if @current_user.type == Admin %> 
+            <div class="space">
+                <%= f.select  :department_id, Department.all.map{|a| [a.name, a.id]}, { :include_blank => ' Select dept' }, :required => true, :class =>"width" %>
+            </div>
+          <% end %>
+
+          <div class="space">  
+              <%= f.text_field :username ,:required => true,:placeholder => "username",:minlength=>3,:maxlength=>15,:class =>"width"%>
+          </div>
+
+          <div class="space">  
+              <%= f.password_field :password ,:required => true,:placeholder => "password",:minlength=>3,:maxlength=>15,:class =>"width"%>
+          </div>
+
+          <div class="space">
+              <%= f.password_field :password ,:required => true,:placeholder => "confirm password", :class =>"width" %>
+          </div>
+
+          <div class="space">   <%= f.submit "Create", :class=>"button no-underline"%>
+              <% permitted_to? :login, :users do %>
+                <%= link_to 'Login', login_users_path, :class=>"button-back no-underline" %>
+              <% end %>
+          </div>
+
+        <% end %>
+    </div>
+</div>

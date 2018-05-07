@@ -1,0 +1,78 @@
+.container{
+    
+    overflow: hidden;
+    width: 20%;
+    float: left;
+    margin-top: 2%;
+    margin-left: 40%;
+    margin-right: 10%;
+    padding: 2%;    
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    
+}
+.content{
+    float: left;
+}
+.heading{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Palatino, URW Palladio L, serif;
+        
+}
+.tile{
+    margin: 1%;
+    padding: 1%;
+    width: 290px;
+    height: 500px;
+    float: left;
+    margin-top: -10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.tile:hover{
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.profile-pic{
+    margin-left: 90px;
+    width: 60px;
+}
+.pt-img{
+    width: 1px;
+    height: 1px;
+}
+.details{
+    margin-top: 150px;
+    
+}
+.links{
+    width: auto;
+    margin-top: 50px;
+    display: inline-block;
+    
+}
+.no-underline{
+    text-decoration: none;
+}
+.button{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase; 
+}
+.button-back{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}

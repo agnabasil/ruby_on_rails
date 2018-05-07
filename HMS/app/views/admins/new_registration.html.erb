@@ -1,0 +1,59 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/admins/new_registration.css">
+<div class="container">
+    <div class="outer-card">
+        <p class="heading">Bed Registration</p>
+        <div class="login-card">
+            <img src="/images/registration.png" alt="logo" class="user">
+            <% form_for @registration, :url=>create_new_registration_admins_path  do |f|%>
+              <div class="space"><%= f.error_messages %></div>
+
+              <div class="space">
+                  <%= f.label :select_patient %>
+                  <%= f.select :patient_id, options_for_select(@patients.map{|p| [p.name,p.id]}),:required => true, :class =>"width"%>
+              </div>
+
+              <div class="space">
+                  <%= f.label :select_room %>
+                  <%= f.select :id, options_for_select(@rooms.map{|p| [p.room_no,p.id]}),:required => true, :class =>"width"%>
+              </div>
+
+              <div class="space">  
+                  <%= f.label :start_date %><br/>
+                  <%=f.datetime_select :start_time, :start_year => 2018, :id=> "start_date", :required => true, :class =>"width", :default => { :hour => Time.now.strftime("%H"), :minute => Time.now.strftime("%M") }%>
+              </div>
+
+              <div class="space">  
+                  <%= f.label :end_date %><br/>
+                  <%=f.datetime_select :end_time, :start_year => 2018, :id=> "start_date",:required => true, :class =>"width", :default => { :hour => Time.now.strftime("%H"), :minute => Time.now.strftime("%M") }%><br/>
+              </div>
+
+              <a id="list" href="#" class="button no-underline">show Available Beds</a>
+              <div id="beds"><br>
+                  <% permitted_to? :index, :admins do %>
+                    <%= link_to 'Back', admins_path,:class => "button no-underline" %>
+                  <% end %>
+              </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
+<script>
+
+    $(function(){
+    $('#list').on('click',function(e){
+    e.preventDefault();
+    start_time = $('#registration_start_time_1i').val()+"-" +$('#registration_start_time_2i').val()+"-" + $('#registration_start_time_3i').val()+" " + $('#registration_start_time_4i').val()+":" +$('#registration_start_time_5i').val()
+    end_time = $('#registration_end_time_1i').val()+"-" + $('#registration_end_time_2i').val()+"-" + $('#registration_end_time_3i').val()+" " + $('#registration_end_time_4i').val()+":" +$('#registration_end_time_5i').val()
+    $.ajax({
+    method: 'get',
+    url: "/admins/ajax_bed_view",
+    data: {room_id: $('#registration_id').val(),patient_id: $('#registration_patient_id').val(),start_time: start_time,end_time: end_time},
+    complete: function(resp){
+    $('#beds').html(resp.responseText);
+    }
+    })
+    }); 
+    })    
+
+</script>

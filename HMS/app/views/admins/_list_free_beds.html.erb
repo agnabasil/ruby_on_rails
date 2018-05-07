@@ -1,0 +1,9 @@
+<div>
+    select bed
+    <%= select :registration,:bed_id,
+      options_from_collection_for_select(@beds,"id","bed_no"),
+      {:include_blank=>"--Select a bed--",:selected=>@bed.try(:id).to_i}%><br>
+    <button id="submit "name="button" type="submit">Admit Patient</button><br>
+    <%= link_to 'Back', admins_path,:class => "space button no-underline" %>
+
+</div>

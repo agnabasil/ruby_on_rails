@@ -1,0 +1,103 @@
+.container{
+
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-right: 10%;
+    padding: 2%;    
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+.content{
+    display: inline-block;
+    float: left;
+    margin: 1%;
+    width: auto;
+    height: auto;
+
+}
+.tile{
+    margin: 1%;
+    padding: 0%;
+    width: 270px;
+    height: 100px;
+    float: left;
+    padding: 1%;    
+    overflow: hidden;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.tile:hover{
+    
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.links{
+    float: left;
+    margin: 10px;
+}
+.button{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase; 
+}
+.button-back{
+    font-size: 15px;
+    padding: 3px;
+    color: #0099CC; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}
+.heading{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Palatino, URW Palladio L, serif;
+
+}
+.no-underline{
+    text-decoration: none;
+}
+
+.partial-list{
+    float: right;
+
+}
+.dept-name{
+    font-family: Palatino, URW Palladio L, serif;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic ;
+    margin: 0%;
+
+}
+.dept-doc{
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-size: 15px ;
+    font-style: oblique;
+}
+.delete_pos{
+    font-size: 12px;
+    float: right;
+    margin-top: -30px;
+}
+.button-delete{
+    margin-top: -5px;
+    font-size: 15px;
+    padding: 3px;
+    color: #ff0000; 
+    background-color: transparent; 
+    border: 1px solid #0099CC; 
+    border-radius: 5px; 
+    text-transform: uppercase;
+}
+
